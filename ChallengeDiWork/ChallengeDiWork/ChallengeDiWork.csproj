@@ -56,7 +56,8 @@
     <Compile Include="Logica\Desperfecto.cs" />
     <Compile Include="Logica\Moto.cs" />
     <Compile Include="Logica\Repuesto.cs" />
-    <Compile Include="Modelos\BD.cs" />
+    <Compile Include="Persistencia\BD.cs" />
+    <Compile Include="Persistencia\ConsultasDeSalida.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Logica\Vehiculo.cs" />
@@ -83,6 +84,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Modelos\" />
     <Folder Include="Presentacion\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

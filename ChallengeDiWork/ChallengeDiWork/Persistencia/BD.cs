@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ChallengeDiWork.Modelos
 {
-    public class BD
+    public abstract class BD
     {
-        public const string ConnecctionString = "Server=DESKTOP-NU2KG89;Database=Taller;Trusted_Connection=True";
+        public const string ConnecctionString = "Server=DESKTOP-NU2KG89;Database=TallerMecanico;Trusted_Connection=True";
     }
 }

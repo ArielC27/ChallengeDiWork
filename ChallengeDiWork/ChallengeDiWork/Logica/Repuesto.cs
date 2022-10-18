@@ -10,6 +10,11 @@ namespace ChallengeDiWork.Logica
     {
         public string Nombre { get; set; }
         public decimal Precio{ get; set; }
+        public int Cantidad { get; set; }
         public List<Desperfecto> Desperfectos { get; set; }
+        public decimal RespTotal()
+        {
+            return Precio * Cantidad;
+        }
     }
 }
