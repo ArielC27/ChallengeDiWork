@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChallengeDiWork.Logica
+namespace Modelo
 {
-    public class Moto : Vehiculo
+    public class Class1
     {
-        public int Cilindrada { get; set; }
     }
 }
