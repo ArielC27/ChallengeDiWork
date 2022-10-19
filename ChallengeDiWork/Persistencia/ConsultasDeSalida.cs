@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using ChallengeDiWork.Logica;
 using ChallengeDiWork.Modelos;
 
@@ -15,15 +9,31 @@ namespace ChallengeDiWork.Persistencia
     {
         public Repuesto MasUtilizado(string nombre)
         {
+            Repuesto repuesto = new Repuesto();
             using (SqlConnection sqlConnection = new SqlConnection(ConnecctionString))
             {
-                var query = "SELECT * FROM Repuesto WHERE Nombre = @nombre";
-                using (SqlCommand sqlCommand = new SqlCommand(query,sqlConnection))
+                var query = "FROM * Respuesto WHERE Nombre = @nombre";
+                
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+                sqlConnection.Open();
+                if (nombre != null)
                 {
-                    sqlConnection.Open();
-                    sqlCommand.Parameters.Add(new SqlParameter("nombre", SqlDbType.VarChar) { Value = nombre });
+
                 }
+                DataSet resultado = new DataSet();
+                sqlDataAdapter.Fill(resultado);
+
+                sqlConnection.Close();
+                return repuesto;
             }
+        }
+        public decimal Promedio()
+        {
+            return 0;
+        }
+        public decimal TotalAcumulado()
+        {
+            return 0;
         }
     }
 }

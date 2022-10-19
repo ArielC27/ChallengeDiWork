@@ -12,9 +12,9 @@ namespace ChallengeDiWork.Logica
         public decimal Precio{ get; set; }
         public int Cantidad { get; set; }
         public List<Desperfecto> Desperfectos { get; set; }
-        public decimal RespTotal()
+        public decimal RespuestoTotal()
         {
-            return Precio * Cantidad;
+            return Precio * Cantidad; //Utilizar para calcular el presupuesto total
         }
     }
 }
