@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ChallengeDiWork;
 
-namespace Modelo
+namespace ChallengeDiWork.Modelo
 {
     public class Moto : Vehiculo
     {

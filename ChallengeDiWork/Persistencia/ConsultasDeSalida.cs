@@ -1,7 +1,6 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
-using ChallengeDiWork.Logica;
-using ChallengeDiWork.Modelos;
+using ChallengeDiWork.Modelo;
 
 namespace ChallengeDiWork.Persistencia
 {
@@ -13,7 +12,7 @@ namespace ChallengeDiWork.Persistencia
             using (SqlConnection sqlConnection = new SqlConnection(ConnecctionString))
             {
                 var query = "FROM * Respuesto WHERE Nombre = @nombre";
-                
+
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
                 sqlConnection.Open();
                 if (nombre != null)

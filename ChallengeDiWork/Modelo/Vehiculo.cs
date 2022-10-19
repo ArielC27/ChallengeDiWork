@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChallengeDiWork.Logica;
+using ChallengeDiWork.Modelo;
 
-namespace ChallengeDiWork
+namespace ChallengeDiWork.Modelo
 {
     public abstract class Vehiculo
     {

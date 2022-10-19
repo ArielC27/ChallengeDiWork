@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChallengeDiWork.Modelos
+namespace ChallengeDiWork.Persistencia
 {
     public abstract class BD
     {
