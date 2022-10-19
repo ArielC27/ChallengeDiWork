@@ -24,20 +24,22 @@ namespace ChallengeDiWork.Logica
             Desperfecto = desperfecto;
             Repuesto = repuesto;
         }
-        public decimal PresupuestoInicial()
+        public void PresupuestoInicial()
         {
-            return Subtotal = ((Repuesto.Precio * Repuesto.Cantidad) + Desperfecto.ManoDeObra + (130 * Desperfecto.Tiempo)) * 1.10m;
+            Subtotal = ((Repuesto.Precio * Repuesto.Cantidad) + Desperfecto.ManoDeObra + (130 * Desperfecto.Tiempo)) * 1.10m;
         }
         public decimal Total()
         {
             switch (MetodoDePago)
             {
-                case "TD":
+                case "TD": //Tarjeta de debito
                     return TotalFacturado = Subtotal * 1.10m; //Recargo del 10% por pago con Tarjeta de debito
                     break;
-                case "TC":
+
+                case "TC": //Tarjeta de credito
                     return TotalFacturado = Subtotal * 1.10m; //Recargo del 10 % por pago con Tarjeta de credito
                     break;
+                    
                 default: return TotalFacturado = Subtotal - (Subtotal * 1.10m); //Descuento del 10% por pago en efectivo
             }
         }
