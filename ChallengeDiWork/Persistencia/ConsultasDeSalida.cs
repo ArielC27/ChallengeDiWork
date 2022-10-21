@@ -11,7 +11,7 @@ namespace ChallengeDiWork.Persistencia
             Repuesto repuesto = new Repuesto();
             using (SqlConnection sqlConnection = new SqlConnection(ConnecctionString))
             {
-                var query = "FROM * Respuesto WHERE Nombre = @nombre";
+                var query = "Exuc Sp_";
 
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
                 DataSet resultado = new DataSet();
