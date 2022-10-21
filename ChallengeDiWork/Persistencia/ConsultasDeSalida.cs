@@ -14,15 +14,8 @@ namespace ChallengeDiWork.Persistencia
                 var query = "FROM * Respuesto WHERE Nombre = @nombre";
 
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
-                sqlConnection.Open();
-                if (nombre != null)
-                {
-
-                }
                 DataSet resultado = new DataSet();
                 sqlDataAdapter.Fill(resultado);
-
-                sqlConnection.Close();
                 return repuesto;
             }
         }

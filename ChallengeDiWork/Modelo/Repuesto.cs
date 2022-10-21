@@ -12,9 +12,5 @@ namespace ChallengeDiWork.Modelo
         public decimal Precio{ get; set; }
         public int Cantidad { get; set; }
         public List<Desperfecto> Desperfectos { get; set; }
-        public decimal RespuestoTotal()
-        {
-            return Precio * Cantidad; //Utilizar para calcular el presupuesto total
-        }
     }
 }
