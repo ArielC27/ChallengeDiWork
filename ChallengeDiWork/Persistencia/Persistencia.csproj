@@ -47,6 +47,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Logica\Logica.csproj">
+      <Project>{D1DDBD7B-A10F-4D4D-9B74-133457298AB6}</Project>
+      <Name>Logica</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modelo\Modelo.csproj">
       <Project>{4A5B09EF-125A-47E8-B033-50E346255BC6}</Project>
       <Name>Modelo</Name>

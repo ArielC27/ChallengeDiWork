@@ -1,31 +1,34 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System.Xml.Schema;
+using ChallengeDiWork.Logica;
 using ChallengeDiWork.Modelo;
 
 namespace ChallengeDiWork.Persistencia
 {
     public class ConsultasDeSalida : BD
     {
-        public Repuesto MasUtilizado(string nombre)
+        public Repuesto MasUtilizado(string marca, int repuestoId, int cantidad)
         {
-            Repuesto repuesto = new Repuesto();
-            using (SqlConnection sqlConnection = new SqlConnection(ConnecctionString))
+            Repuesto maxRepuesto = new Repuesto();
+            using (SqlConnection conn = new SqlConnection(ConnecctionString))
             {
-                var query = "Exuc Sp_";
+                //--- Query para que muestre el maximo respuesto que se utilizo en las reparaciones realizadas ---//
 
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
-                DataSet resultado = new DataSet();
-                sqlDataAdapter.Fill(resultado);
-                return repuesto;
+                string query = "SELECT TOP(1) RD.RepuestoId, SUM(D.Cantidad) AS 'Cantidad', V.Marca FROM Vehiculo as V " +
+                    "INNER JOIN Desperfecto AS D ON V.VehiculoID = D.VehiculoId " +
+                    "INNER JOIN Repuesto_Desperfecto AS RD on RD.DesperfectoID = D.DesperfectoId " +
+                    "INNER JOIN Repuesto AS R on R.RepuestoId = RD.RepuestoID " +
+                    "GROUP BY RD.RepuestoId, V.Marca " +
+                    "HAVING V.Marca = @marca " +
+                    "ORDER BY Cantidad DESC ";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+
+                }
+
             }
-        }
-        public decimal Promedio()
-        {
-            return 0;
-        }
-        public decimal TotalAcumulado()
-        {
-            return 0;
+            return maxRepuesto;
         }
     }
 }
