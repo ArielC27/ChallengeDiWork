@@ -1,5 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Xml.Schema;
 using ChallengeDiWork.Logica;
 using ChallengeDiWork.Modelo;
@@ -8,27 +10,25 @@ namespace ChallengeDiWork.Persistencia
 {
     public class ConsultasDeSalida : BD
     {
-        public Repuesto MasUtilizado(string marca, int repuestoId, int cantidad)
+        public bool MasUtilizado(Vehiculo marca, Repuesto repuestoId, Repuesto cantidad)
         {
-            Repuesto maxRepuesto = new Repuesto();
+            bool result = false;
+            string query = "select top(1) RD.RepuestoId, SUM(D.Cantidad) as 'Cantidad', V.Marca from Vehiculo as V " +
+                           "inner join Desperfecto as D on V.VehiculoID = D.VehiculoId " +
+                           "inner join Repuesto_Desperfecto as RD on RD.DesperfectoID = D.DesperfectoId " +
+                           "inner join Repuesto as R on R.RepuestoId = RD.RepuestoID " +
+                           "group by RD.RepuestoId, V.Marca " +
+                           "having V.Marca = @marca " +
+                           "order by Cantidad desc ";
             using (SqlConnection conn = new SqlConnection(ConnecctionString))
             {
-                //--- Query para que muestre el maximo respuesto que se utilizo en las reparaciones realizadas ---//
-
-                string query = "SELECT TOP(1) RD.RepuestoId, SUM(D.Cantidad) AS 'Cantidad', V.Marca FROM Vehiculo as V " +
-                    "INNER JOIN Desperfecto AS D ON V.VehiculoID = D.VehiculoId " +
-                    "INNER JOIN Repuesto_Desperfecto AS RD on RD.DesperfectoID = D.DesperfectoId " +
-                    "INNER JOIN Repuesto AS R on R.RepuestoId = RD.RepuestoID " +
-                    "GROUP BY RD.RepuestoId, V.Marca " +
-                    "HAVING V.Marca = @marca " +
-                    "ORDER BY Cantidad DESC ";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
 
                 }
 
             }
-            return maxRepuesto;
+            return result;
         }
     }
 }
