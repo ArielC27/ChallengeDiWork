@@ -24,8 +24,8 @@ namespace ChallengeDiWork.Persistencia
                                "order by Cantidad desc ";
 
                 SqlParameter marca = new SqlParameter("Marca", SqlDbType.VarChar) { Value = vehiculo.Marca };
-                SqlParameter repuestoID = new SqlParameter("Marca", SqlDbType.Int) { Value = repuesto.RepuestoId };
-                SqlParameter cantidad = new SqlParameter("Marca", SqlDbType.Int) { Value = desperfecto.Cantidad };
+                SqlParameter repuestoID = new SqlParameter("RepuestoId", SqlDbType.Int) { Value = repuesto.RepuestoId };
+                SqlParameter cantidad = new SqlParameter("Cantidad", SqlDbType.Int) { Value = desperfecto.Cantidad };
 
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                 {
