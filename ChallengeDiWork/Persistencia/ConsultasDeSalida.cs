@@ -1,19 +1,19 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Xml.Schema;
-using ChallengeDiWork.Logica;
-using ChallengeDiWork.Modelo;
+using System.Data;
+using System.Text;
+using System.Threading.Tasks;
+using Modelo;
 
-namespace ChallengeDiWork.Persistencia
+namespace Persistencia
 {
-    public class ConsultasDeSalida : BD
+    public abstract class ConsultasDeSalida : BD
     {
         public bool MasUtilizado(Vehiculo vehiculo, Repuesto repuesto, Desperfecto desperfecto)
         {
             bool result = false;
-            using (SqlConnection sqlConnection = new SqlConnection(ConnecctionString))
+            using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
             {
                 string query = "select top(1) RD.RepuestoId, SUM(D.Cantidad) as 'Cantidad', V.Marca from Vehiculo as V " +
                                "inner join Desperfecto as D on V.VehiculoID = D.VehiculoId " +

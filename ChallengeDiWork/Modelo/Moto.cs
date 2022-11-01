@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChallengeDiWork;
 
-namespace ChallengeDiWork.Modelo
+namespace Modelo
 {
     public class Moto : Vehiculo
     {

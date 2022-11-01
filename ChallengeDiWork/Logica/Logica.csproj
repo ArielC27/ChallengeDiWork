@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D1DDBD7B-A10F-4D4D-9B74-133457298AB6}</ProjectGuid>
+    <ProjectGuid>{35636850-2EF6-4E4A-866F-DBD17DD4CF60}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Logica</RootNamespace>
@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modelo\Modelo.csproj">
-      <Project>{4A5B09EF-125A-47E8-B033-50E346255BC6}</Project>
+      <Project>{2473D38F-41FF-479A-86A0-5BF251A7E08A}</Project>
       <Name>Modelo</Name>
     </ProjectReference>
   </ItemGroup>

@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
-using ChallengeDiWork.Modelo;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Modelo;
 
-namespace ChallengeDiWork.Logica
+namespace Logica
 {
     public class Factura
     {
@@ -22,7 +26,7 @@ namespace ChallengeDiWork.Logica
         //--- Calculo del subtotal, que es el presupuesto inicial antes de aplicar los recargos y descuentos respectivos.
         public void PresupuestoInicial()
         {
-            Subtotal = ((Repuesto.Precio * Repuesto.Cantidad) + Desperfecto.ManoDeObra + (130 * Desperfecto.Tiempo)) * 1.10m;
+            Subtotal = ((Repuesto.Precio * Desperfecto.Cantidad) + Desperfecto.ManoDeObra + (130 * Desperfecto.Tiempo)) * 1.10m;
         }
 
         //--- Calculo del presupuesto Total y final, segun el metodo de pago que elija el cliente, se aplican los descuentos y recargos establecidos.
@@ -62,7 +66,7 @@ namespace ChallengeDiWork.Logica
             List<Factura> Presupuestos = new List<Factura>();
             foreach (Factura presupuesto in Presupuestos)
             {
-                sumaTotal += presupuesto.TotalFacturado ;
+                sumaTotal += presupuesto.TotalFacturado;
             }
             return sumaTotal;
         }

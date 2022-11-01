@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7714F7CD-032C-4CEB-9F5A-1BD226177200}</ProjectGuid>
+    <ProjectGuid>{86FEC706-4CD4-4D94-8AAD-E1611235799D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Persistencia</RootNamespace>
@@ -46,12 +46,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Logica\Logica.csproj">
-      <Project>{D1DDBD7B-A10F-4D4D-9B74-133457298AB6}</Project>
-      <Name>Logica</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Modelo\Modelo.csproj">
-      <Project>{4A5B09EF-125A-47E8-B033-50E346255BC6}</Project>
+      <Project>{2473D38F-41FF-479A-86A0-5BF251A7E08A}</Project>
       <Name>Modelo</Name>
     </ProjectReference>
   </ItemGroup>

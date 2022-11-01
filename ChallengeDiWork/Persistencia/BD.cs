@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChallengeDiWork.Persistencia
+namespace Persistencia
 {
     public abstract class BD
     {
-        public const string ConnecctionString = "Server=DESKTOP-NU2KG89;Database=TallerMecanico;Trusted_Connection=True";
+        public const string ConnectionString = "Server=DESKTOP-NU2KG89;Database=TallerMecanico;Trusted_Connection=True";
     }
 }
